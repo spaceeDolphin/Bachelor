@@ -1,0 +1,26 @@
+from opcua import Client
+
+# Set the LDS endpoint
+lds_endpoint = "opc.tcp://localhost:8080"
+
+# Create a client object with a longer timeout
+client = Client(lds_endpoint, timeout=10)  # Timeout in seconds
+
+try:
+    # Connect to the LDS
+    client.connect()
+
+    # Discover servers
+    servers = client.find_servers()
+
+    # Print the discovered servers
+    for server in servers:
+        print(f"Server Name: {server.ApplicationName.Text}")
+        print(f"Application URI: {server.ApplicationUri}")
+        print(f"Discovery URLs: {server.DiscoveryUrls}")
+        print("-" * 40)
+
+finally:
+    # Disconnect the client
+    client.disconnect()
+

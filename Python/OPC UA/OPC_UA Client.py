@@ -3,7 +3,7 @@ sys.path.insert(0, "..")
 from opcua import Client
 
 if __name__ == "__main__":
-    client = Client("opc.tcp://localhost:4840/freeopcua/server/")
+    client = Client("opc.tcp://localhost:8080/")
     #connect using a user
     # client = Client("opc.tcp://admin@localhost:4840/freeopcua/server/")
     try:
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         #  as well as browse or populate address space
         print("Children of root are: ", root.get_children())
 
-        # get a specific node knowing its node id
+        # get a specific node knowing its nodeC:\Users\antho\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip id
         #var = client.get_node(ua.NodeId(1002, 2))
         #var = client.get_node("ns=3;i=2002")
         #print(var)

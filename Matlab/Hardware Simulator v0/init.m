@@ -1,21 +1,21 @@
 %Mathematical model of tank with mass flow function based on inflow, outflow
-%MPC optimization: minimize run costs
 %Constraints: min/max levels, pump capacity
 
 % Tank
-h = 7;
-A = 380;
-V = h*A;
-LimitHigh = 6.5;
-LimitLow = 2;
+h = 3.8;
+A = 160;
+V = h*A; % 608 m3
+LimitHigh = 3.8; % not used
+LimitLow = 2; % not used
 InitialLevel = 3.0;
 
 % Flow
-qV_max = 120/3600; % m3/s
-qOut_median = 30/3600;
+qV_max = 50/3600; % m3/s
+qOut_median = 16.6/3600;
+qOut_usualMax = 23.9/3600;
+qOut_usualMin = 10.6/3600;
+qOut_simAmplitude = (qOut_usualMax - qOut_usualMin)/2;
 FlowBoost = 100; % multiplies flow to speed up simulation process
 
 % Time
-list24 = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]*3600;
-
-PI_Gain = 0;
+list301 = [0:300]*(86400/300); % used to lookup flowOut value from real values

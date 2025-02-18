@@ -2,12 +2,12 @@
 %Constraints: min/max levels, pump capacity
 
 % Tank
-h = 3.8;
-A = 160;
-V = h*A; % 608 m3
+h = 4;
+A = 170;
+V = h*A; % 680 m3
 LimitHigh = 3.8; % not used
 LimitLow = 2; % not used
-InitialLevel = 3.0;
+InitialLevel = 2.0;
 
 % Flow
 qV_max = 50/3600; % m3/s
@@ -19,3 +19,7 @@ FlowBoost = 100; % multiplies flow to speed up simulation process
 
 % Time
 list301 = [0:300]*(86400/300); % used to lookup flowOut value from real values
+
+%comm
+%client = tcpclient("localhost",8080);
+%write(client,10,"double")

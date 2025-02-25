@@ -27,7 +27,9 @@ poolRadiusOuter = poolRadiusInner + (2*poolWallThickness)
 # ROUND POOL
 linepath = [ v.vec(0,0,0), v.vec(0,4,0) ]
 poolWall = v.extrusion( shape=[v.shapes.circle(radius=7.36),v.shapes.circle(radius=7.76)], path=linepath, color=v.color.white)
+#poolWall = v.extrusion( shape=[v.shapes.circle(radius=7.36),v.shapes.circle(radius=7.76)], path=linepath, texture=v.textures.emiel)
 poolFloor = v.cylinder(pos=v.vec(0,0,0), axis=v.vec(0,-0.2,0), radius=7.76, color=v.color.white)
+#poolFloor = v.cylinder(pos=v.vec(0,0,0), axis=v.vec(0,-0.2,0), radius=7.76, texture=v.textures.emiel)
 poolWater = v.cylinder(pos=v.vec(0,0,0), axis=v.vec(0,poolLevelStart,0), radius=7.36, texture=v.textures.waterClear, opacity=.85)
 
 light = v.local_light(pos=v.vec(0,7,10), color=v.color.white)

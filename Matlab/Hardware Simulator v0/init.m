@@ -15,7 +15,7 @@ qOut_median = 16.6/3600;
 qOut_usualMax = 23.9/3600;
 qOut_usualMin = 10.6/3600;
 qOut_simAmplitude = (qOut_usualMax - qOut_usualMin)/2;
-FlowBoost = 100; % multiplies flow to speed up simulation process
+FlowBoost = 60; % multiplies flow to speed up simulation process
 
 % Time
 list301 = [0:300]*(86400/300); % used to lookup flowOut value from real values

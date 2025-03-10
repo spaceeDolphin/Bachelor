@@ -1,3 +1,7 @@
+#
+#   3D TANK SIMULATION FOR THE SIMULINK SIMULATOR
+#
+
 import vpython as v
 import numpy as np
 import socket

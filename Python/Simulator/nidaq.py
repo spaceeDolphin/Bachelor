@@ -10,7 +10,7 @@ import numpy as np
 sampleTime = 1
 q_out_median = 16.6
 q_max = 50.0
-boost = 100
+boost = 60
 q_in_voltage = 1.5
 simRuntime = 0
 

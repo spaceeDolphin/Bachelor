@@ -2,12 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv('Python\Simulator\simLog.csv')
+df = pd.read_csv('Python\Simulator\simLog 10-03-25.csv')
 
 # Create a figure with two subplots
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 12))
 
 # Plot Qin and Qout on the first subplot
+ax1.set_ylim(0,50)
 ax1.plot(df['Time'], df['Qin'], label='Qin', color='orange')
 ax1.plot(df['Time'], df['Qout'], label='Qout', color='black')
 ax1.set_title('Flow in and out of the tank')
@@ -17,6 +18,7 @@ ax1.legend()
 ax1.grid(True)
 
 # Plot Level on the second subplot
+ax2.set_ylim(0,100)
 ax2.plot(df['Time'], df['Level'], label='Level', color='blue')
 ax2.plot(df['Time'], df['TargetLevel'], label='Target Level', color='red')
 ax2.set_title('Tank Level')

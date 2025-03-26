@@ -4,7 +4,7 @@ import requests
 # Define the URL with the appropriate parameters
 year = "2025"
 month = "03"
-day = "12"
+day = "26"
 price_area = "NO2"  # NO2 sør norge
 runHours = 5 # for optimalisation
 
@@ -18,7 +18,7 @@ if response.status_code == 200:
     try:
         data = response.json()
         # save JSON file
-        with open('prices.json', 'w') as json_file:
+        with open('Python\EnergyPriceAPI\prices.json', 'w') as json_file:
             json.dump(data, json_file, indent=4)
         print("Data saved to prices.json")
         #print(data) # print to terminal
@@ -32,7 +32,7 @@ else:
 
 # Open prices.json, get the best hours and write to pricesOptimal.json
 # Load the JSON data from the file
-with open('prices.json', 'r') as json_file:
+with open('Python\EnergyPriceAPI\prices.json', 'r') as json_file:
     data = json.load(json_file)
 
 # Sort the data by NOK_per_kWh
@@ -42,7 +42,7 @@ sorted_data = sorted(data, key=lambda x: x['NOK_per_kWh'])
 top_entries = sorted_data[:runHours]
 
 # Save the modified data to a new JSON file
-with open('pricesOptimal.json', 'w') as json_file:
+with open('Python\EnergyPriceAPI\pricesOptimal.json', 'w') as json_file:
     json.dump(top_entries, json_file, indent=4)
 
 print("Best entries saved to pricesOptimal.json")

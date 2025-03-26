@@ -2,15 +2,24 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv('Python\Simulator\simLog 10-03-25.csv')
+df = pd.read_csv('Simulator\simLog 24H25-03.csv')
 
 # Create a figure with two subplots
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 12))
 
+# Limit plotting to 24 h
+plotStart = 1442
+plotEnd = 1441*2
+
+# Convert Time (seconds) to Hours:minutes
+
+
 # Plot Qin and Qout on the first subplot
 ax1.set_ylim(0,50)
-ax1.plot(df['Time'], df['Qin'], label='Qin', color='orange')
-ax1.plot(df['Time'], df['Qout'], label='Qout', color='black')
+ax1.plot(df['Time'][plotStart:plotEnd], df['Qin'][plotStart:plotEnd], label='Qin', color='orange')
+ax1.plot(df['Time'][plotStart:plotEnd], df['Qout'][plotStart:plotEnd], label='Qout', color='black')
+#ax1.plot(df['Time'], df['Qin'], label='Qin', color='orange')
+#ax1.plot(df['Time'], df['Qout'], label='Qout', color='black')
 ax1.set_title('Flow in and out of the tank')
 #ax1.set_xlabel('Time [s]')
 ax1.set_ylabel('Flow [m3/s]')
@@ -19,8 +28,10 @@ ax1.grid(True)
 
 # Plot Level on the second subplot
 ax2.set_ylim(0,100)
-ax2.plot(df['Time'], df['Level'], label='Level', color='blue')
-ax2.plot(df['Time'], df['TargetLevel'], label='Target Level', color='red')
+ax2.plot(df['Time'][plotStart:plotEnd], df['Level'][plotStart:plotEnd], label='Level', color='blue')
+#ax2.plot(df['Time'][plotStart:plotEnd], df['TargetLevel'][plotStart:plotEnd], label='Target Level', color='red')
+#ax2.plot(df['Time'], df['Level'], label='Level', color='blue')
+#ax2.plot(df['Time'], df['TargetLevel'], label='Target Level', color='red')
 ax2.set_title('Tank Level')
 ax2.set_xlabel('Time [s]')
 ax2.set_ylabel('Level [%]')

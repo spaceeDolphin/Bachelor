@@ -3,8 +3,8 @@ import requests
 
 # Define the URL with the appropriate parameters
 year = "2025"
-month = "03"
-day = "26"
+month = "04"
+day = "02"
 price_area = "NO2"  # NO2 sør norge
 runHours = 5 # for optimalisation
 

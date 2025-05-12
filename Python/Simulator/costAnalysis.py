@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 # Using a 24h simulation completed in 24 minutes. Simulation must be done with 1 minute simulated time per 1 second real time. (boost = 60)
 
 # Load the CSV file into a DataFrame
-df = pd.read_csv('Python\Simulator\simLog 24H25-03.csv')
+df = pd.read_csv('Python\Simulator\simLog 24H01-04.csv')
 
 # Get energy prices
 with open('Python\EnergyPriceAPI\prices.json', 'r') as json_file:
